@@ -1,12 +1,19 @@
+html {
+  background-color: cadetblue;
+}
 body {
   background-color: cadetblue;
   color: papayawhip;
+  height: auto;
+  padding: 0;
+  margin: 0;
 }
 
 .title {
   text-align: center;
   width: 50%;
   margin: auto;
+  height: 20%;
 }
 
 .title > h1 {
@@ -21,4 +28,28 @@ body {
   font-size: 2em;
   color: cadetblue;
   background-color: papayawhip;
+}
+
+.title > input {
+  width: 10%;
+  margin: auto;
+  font-size: 2em;
+  color: cadetblue;
+  background-color: papayawhip;
+}
+
+.square {
+  background-color: papawhip;
+  margin: auto;
+}
+
+.grid {
+  background-color: cadetblue;
+  width: 80%;
+  border: solid black 2px;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: auto;
+  height: 80%;
 }

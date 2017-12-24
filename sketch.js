@@ -7,11 +7,21 @@ let make_square = () => {
     //return this div
 };
 
+//check's if number is between 2 and 16
+let check_valid = (n) => {
+  if(n >= 2 && n <= 16) return true;
+  return false;
+};
+
 //make_grid(int n) creates a grid of squares of size n * n, n E [2,16]
-let make_grid = (int n) => {
-  //calculate the width and height each grid would have to be.
-  //calculate the number of rows and columns needed.
+let make_grid = (n) => {
+  //check if n is a valid number
+  if(!check_valid(n)) {
+    n = 2;
+  }
+  let number_rows = n;
   //create flex-box divs according to number of rows and columns.
+  
   //create n*n squares and append child to the flex-box divs.
 };
 
