@@ -13,7 +13,7 @@ body {
   text-align: center;
   width: 50%;
   margin: auto;
-  height: 20%;
+  height: 10vw;
 }
 
 .title > h1 {
@@ -38,18 +38,14 @@ body {
   background-color: papayawhip;
 }
 
-.square {
-  background-color: papawhip;
+#grid {
+  height: 700px;
+  width: 700px;
   margin: auto;
+  display: grid;
+  grid-gap: 1px;
 }
 
-.grid {
-  background-color: cadetblue;
-  width: 80%;
-  border: solid black 2px;
-  padding-top: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
-  margin: auto;
-  height: 80%;
+#item {
+  background-color: papayawhip;
 }

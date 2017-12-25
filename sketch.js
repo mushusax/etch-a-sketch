@@ -1,36 +1,25 @@
-//make_square() returns one grid square
-let make_square = () => {
-    //create a div
-    let div = document.createElement('div');
-    //apply the grid square css class
-    div.className = ".square";
-    //return this div
-};
-
-//check's if number is between 2 and 16
-let check_valid = (n) => {
-  if(n >= 2 && n <= 16) return true;
+//check if size is valid
+let is_valid = (size) => {
+  if(size >= 2 && size <= 10) return true;
   return false;
 };
 
-//make_grid(int n) creates a grid of squares of size n * n, n E [2,16]
-let make_grid = (n) => {
-  //check if n is a valid number
-  if(!check_valid(n)) {
-    n = 2;
+//generate grid function
+document.getElementById('btn').addEventListener("click", function(){
+  let size = document.getElementById('number_input').value;
+  if(!is_valid(size)) size = 2;
+  alert("Generating Grid of size: " + size);
+  //set grid size
+  let grid = document.getElementById('grid');
+  grid.style.cssText = "grid-template-rows: repeat(" + size +  ", " + Math.round(700 / size) + "px);";
+  grid.style.cssText = "grid-template-columns: repeat(" + size +  ", " + Math.round(700 / size) + "px);";
+  for(i = 0; i < (size * size); i++) {
+    //Create grid item
+    let div = document.createElement('div');
+    div.id = 'item';
+    let width = Math.round(700 / size);
+    div.style.cssText = "width: " + width + "px;";
+    //add to grid
+    grid.appendChild(div);
   }
-  let number_rows = n;
-  //create flex-box divs according to number of rows and columns.
-  
-  //create n*n squares and append child to the flex-box divs.
-};
-
-//reset() resets the color of the grid
-let reset = () => {
-  //create new grid
-}
-
-//change_color() changes the set color upon click
-let change_color = () => {
-
-}
+});
