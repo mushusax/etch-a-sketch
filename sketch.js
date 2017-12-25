@@ -12,6 +12,13 @@ let reset = () => {
   }
 };
 
+var color_options = ["papayawhip", "darkcyan", "darkseagreen", "indianred", "steelblue", "coral"];
+//generate random color
+let random_color = () => {
+  let num = Math.floor(Math.random() * (6 - 0));
+  return color_options[num];
+};
+
 //generate grid function
 document.getElementById('btn').addEventListener("click", function(){
   reset();
@@ -21,12 +28,18 @@ document.getElementById('btn').addEventListener("click", function(){
   let grid = document.getElementById('grid');
   grid.style.cssText = "grid-template-rows: repeat(" + size +  ", " + Math.round(700 / size) + "px);";
   grid.style.cssText = "grid-template-columns: repeat(" + size +  ", " + Math.round(700 / size) + "px);";
+  let color = random_color();
   for(i = 0; i < (size * size); i++) {
     //Create grid item
     let div = document.createElement('div');
     div.id = 'item';
     let width = Math.round(700 / size);
     div.style.cssText = "width: " + width + "px;";
+
+    //add mouseover capability
+    div.addEventListener("mouseenter", function(){
+      div.style.cssText = "background-color: " + color + ";";
+    });
     //add to grid
     grid.appendChild(div);
   }
