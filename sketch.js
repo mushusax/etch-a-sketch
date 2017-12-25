@@ -1,14 +1,22 @@
 //check if size is valid
 let is_valid = (size) => {
-  if(size >= 2 && size <= 10) return true;
+  if(size >= 2 && size <= 50) return true;
   return false;
+};
+
+//resets grid first
+let reset = () => {
+  let grid = document.getElementById("grid");
+  while (grid.firstChild) {
+    grid.removeChild(grid.firstChild);
+  }
 };
 
 //generate grid function
 document.getElementById('btn').addEventListener("click", function(){
+  reset();
   let size = document.getElementById('number_input').value;
   if(!is_valid(size)) size = 2;
-  alert("Generating Grid of size: " + size);
   //set grid size
   let grid = document.getElementById('grid');
   grid.style.cssText = "grid-template-rows: repeat(" + size +  ", " + Math.round(700 / size) + "px);";
